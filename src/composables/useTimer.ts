@@ -4,8 +4,6 @@ import { computed, readonly, ref, watch } from "vue";
 import type { TimerMode } from "@/types/timer";
 import { TIMER_CONFIG } from "@/constants";
 import { emitter } from "@/utils/eventBus";
-import type { FocusTask } from "@/types";
-import { dexie } from "@/database";
 
 const mode = ref<TimerMode>("focus");
 const isRunning = ref(false);
@@ -106,7 +104,7 @@ export function useTimer() {
       }
    };
 
-   const onTaskFocused = (task: FocusTask) => {
+   const onTaskFocused = () => {
       if (settings.value.pauseTimerWhenSwitchingTask) {
          pause();
       } else return;
@@ -160,26 +158,26 @@ export function useTimer() {
       remainingSeconds.value = getDuration(newMode);
    };
 
-   const shouldPauseTimer = async () => {
-      if (!activeTask.value) return false;
+   // const shouldPauseTimer = async () => {
+   //    if (!activeTask.value) return false;
 
-      const currentTask = await dexie.focusTasks.get(activeTask.value.id);
-      if (!currentTask) return false;
+   //    const currentTask = await dexie.focusTasks.get(activeTask.value.id);
+   //    if (!currentTask) return false;
 
-      if (
-         settings.value.autoCheckTask === 1 &&
-         currentTask.pomodoros >= currentTask.estimatedPomodoros
-      ) {
-         await dexie.focusTasks.update(currentTask.id, { isCompleted: 1 });
+   //    if (
+   //       settings.value.autoCheckTask === 1 &&
+   //       currentTask.pomodoros >= currentTask.estimatedPomodoros
+   //    ) {
+   //       await dexie.focusTasks.update(currentTask.id, { isCompleted: 1 });
 
-         notify("Task Accomplished! 🎉", `"${currentTask.title}" is done.`);
+   //       notify("Task Accomplished! 🎉", `"${currentTask.title}" is done.`);
 
-         pause();
-         return true;
-      }
+   //       pause();
+   //       return true;
+   //    }
 
-      return false;
-   };
+   //    return false;
+   // };
 
    const start = () => {
       if (isRunning.value) return;

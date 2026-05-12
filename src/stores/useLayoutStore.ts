@@ -39,7 +39,7 @@ export const useLayoutStore = defineStore("layout", () => {
 
    const widgets = computed(() => state.value.widgets);
 
-   const initDynamicLayout = (parentWidth: number, parentHeight: number) => {
+   const initDynamicLayout = (_: number, parentHeight: number) => {
       if (state.value.initialized || !state.value.widgets) return;
 
       const gap = 16;

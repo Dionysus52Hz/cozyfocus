@@ -246,7 +246,7 @@
                         <div
                            class="w-full h-full overflow-y-scroll no-scrollbar flex flex-col gap-4 px-1">
                            <div
-                              v-for="i in 10"
+                              v-for="_ in 10"
                               class="flex flex-col gap-2.5">
                               <span
                                  class="text-xs sm:text-sm text-primary-foreground"

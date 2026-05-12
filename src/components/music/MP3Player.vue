@@ -14,9 +14,6 @@
       settings,
       tracks,
       search,
-      fetchNextPage,
-      hasNextPage,
-      isFetchingNextPage,
       playingState,
       isTrackFromStorage,
       isLoading,
@@ -35,14 +32,14 @@
       updateSearch(newValue);
    });
 
-   const onScroll = (e: UIEvent) => {
-      const { scrollTop, scrollHeight, clientHeight } = e.target as HTMLElement;
-      if (scrollTop + clientHeight >= scrollHeight - 20) {
-         if (hasNextPage && !isFetchingNextPage.value) {
-            fetchNextPage();
-         }
-      }
-   };
+   // const onScroll = (e: UIEvent) => {
+   //    const { scrollTop, scrollHeight, clientHeight } = e.target as HTMLElement;
+   //    if (scrollTop + clientHeight >= scrollHeight - 20) {
+   //       if (hasNextPage && !isFetchingNextPage.value) {
+   //          fetchNextPage();
+   //       }
+   //    }
+   // };
 
    watch(
       () => playingState.value.storage,
