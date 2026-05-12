@@ -1,0 +1,14 @@
+{
+   "files": [],
+   "references": [
+      { "path": "./tsconfig.app.json" },
+      { "path": "./tsconfig.node.json" }
+   ],
+   "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+         "@/*": ["./src/*"]
+      },
+      "types": ["vue-grid-layout-v3-types", "youtube"]
+   }
+}
