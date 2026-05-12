@@ -13,7 +13,6 @@
    } from "@/components/ui/number-field";
 
    import { ref, onMounted, onUnmounted, watch } from "vue";
-   import YT from "youtube";
 
    import { useMusicPlayer } from "@/composables/useMusicPlayer";
    import { parseVideoId } from "@/utils/youtube";
@@ -21,7 +20,7 @@
    declare global {
       interface Window {
          onYouTubeIframeAPIReady: () => void;
-         YT: typeof YT;
+         YT: any;
       }
    }
 
