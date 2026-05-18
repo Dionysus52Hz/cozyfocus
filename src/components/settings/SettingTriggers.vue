@@ -84,12 +84,10 @@
                <TooltipContent side="left">Settings</TooltipContent>
 
                <PopoverContent
-                  @interact-outside="(e) => e.preventDefault()"
                   side="left"
-                  align="start"
-                  :align-offset="-8"
-                  :side-offset="16"
-                  class="h-[calc(100dvh-104px)] w-[calc(100vw-80px)] sm:w-sm md:w-md flex flex-col overflow-hidden border-2">
+                  align="center"
+                  :side-offset="8"
+                  class="mt-4 h-[calc(100dvh-104px)] w-[calc(100vw-80px)] sm:w-sm md:w-md flex flex-col overflow-hidden border-2 p-3">
                   <Tabs
                      default-value="timer"
                      class="flex flex-col flex-1 min-h-0 overflow-hidden pr-1"
@@ -185,10 +183,9 @@
 
                <PopoverContent
                   side="left"
-                  align="start"
-                  :align-offset="-52"
-                  :side-offset="20"
-                  class="h-[calc(100dvh-104px)] w-[calc(100vw-80px)] sm:w-sm md:w-md flex flex-col overflow-hidden border-2">
+                  align="center"
+                  :side-offset="16"
+                  class="mt-4 h-[calc(100dvh-104px)] w-[calc(100vw-80px)] sm:w-sm md:w-md flex flex-col overflow-hidden border-2 p-3">
                   <BackgroundGallery />
                </PopoverContent>
             </Popover>
@@ -215,10 +212,9 @@
 
                <PopoverContent
                   side="left"
-                  align="start"
-                  :align-offset="-52"
-                  :side-offset="20"
-                  class="h-[calc(100dvh-104px)] w-[calc(100vw-80px)] sm:w-sm md:w-md flex flex-col overflow-hidden border-2">
+                  align="center"
+                  :side-offset="16"
+                  class="mt-4 h-[calc(100dvh-104px)] w-[calc(100vw-80px)] sm:w-sm md:w-md flex flex-col overflow-hidden border-2 p-0">
                   <ThemePicker />
                </PopoverContent>
             </Popover>
@@ -247,8 +243,8 @@
             <TooltipTrigger as-child>
                <Button
                   @click="toggle"
-                  class="cursor-pointer"
-                  :class="{ 'bg-primary': isFullscreen }"
+                  class="cursor-pointer border-2 border-transparent"
+                  :class="{ 'bg-primary border-border!': isFullscreen }"
                   variant="ghost"
                   size="icon-sm">
                   <HugeiconsIcon

@@ -194,7 +194,9 @@
          class="max-h-[calc(100dvh-32px)] w-[calc(100vw-32px)] max-w-3xl flex flex-col overflow-hidden shadow-none border-2 bg-card text-card-foreground p-0">
          <DialogHeader class="p-4 pb-0">
             <DialogTitle class="text-sm">{{
-               mode === "create" ? "New task" : "Update task"
+               mode === "create"
+                  ? "New plan task"
+                  : `Update task "${editingTask?.title}"`
             }}</DialogTitle>
          </DialogHeader>
 
