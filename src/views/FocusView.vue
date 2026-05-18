@@ -55,8 +55,7 @@
          v-show="store.widgets.plan?.visible"
          id="plan"
          title="Plan"
-         description="To-do list"
-         class="w-[clamp(200px,calc(100vw-160px),600px)]">
+         description="To-do list">
          <PlanTask />
       </DraggableWidget>
 
@@ -64,14 +63,14 @@
          v-show="store.widgets.music?.visible"
          id="music"
          title="Music"
-         description="Music makes your day better"
-         class="w-[clamp(200px,calc(100vw-160px),320px)]">
+         description="Music makes your day better">
          <Tabs
             :model-value="settings.activeSource"
             @update:model-value="
                (value) => switchActiveSource(value as TrackSource)
             "
-            :unmount-on-hide="false">
+            :unmount-on-hide="false"
+            class="h-full overflow-hidden">
             <TabsList
                class="relative shrink-0 [&_button]:cursor-pointer h-10 w-full bg-transparent gap-x-1 border-2 rounded-full [&_button]:border-transparent [&_button]:data-[state=active]:border-border [&_button]:data-[state=active]:bg-primary [&_button]:data-[state=active]:text-primary-foreground [&_button]:data-[state=inactive]:hover:bg-accent [&_button]:data-[state=inactive]:text-card-foreground">
                <TabsTrigger
@@ -87,11 +86,15 @@
                </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="YouTube">
+            <TabsContent
+               value="YouTube"
+               class="flex-1 min-h-0 overflow-scroll no-scrollbar">
                <YouTubePlayer />
             </TabsContent>
 
-            <TabsContent value="storage">
+            <TabsContent
+               value="storage"
+               class="flex-1 min-h-0 overflow-scroll no-scrollbar">
                <MP3Player />
             </TabsContent>
          </Tabs>
@@ -101,8 +104,7 @@
          v-show="store.widgets.focus?.visible"
          id="focus"
          title="Focus task"
-         description="Focus task"
-         class="w-[clamp(200px,calc(100vw-160px),320px)]">
+         description="Focus task">
          <FocusTasksList />
       </DraggableWidget>
 

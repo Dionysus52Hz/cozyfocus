@@ -34,21 +34,21 @@
 </script>
 
 <template>
-   <Card class="w-full border-none shadow-none p-0 h-80 gap-3">
+   <Card class="w-full border-none shadow-none p-0 h-full gap-3">
       <div class="w-full flex items-center justify-center">
          <Button
             @click="openCreate()"
             size="sm"
             class="cursor-pointer border-2">
             <HugeiconsIcon :icon="Add01Icon" />
-            New task
+            Create task
          </Button>
       </div>
 
       <FocusTaskForm />
 
       <CardContent
-         class="p-0 flex-1 overflow-y-scroll no-scrollbar flex flex-col">
+         class="p-0 min-h-0 flex-1 overflow-y-scroll no-scrollbar flex flex-col">
          <Empty
             v-if="!tasks || tasks.length <= 0"
             class="tasks-empty p-2! gap-2">

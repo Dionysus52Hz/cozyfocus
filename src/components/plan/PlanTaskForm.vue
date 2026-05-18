@@ -1,5 +1,6 @@
 <script setup lang="ts">
    import { ArrowDown01Icon, Tick01Icon } from "@hugeicons/core-free-icons";
+   import { Separator } from "@/components/ui/separator";
    import { Textarea } from "@/components/ui/textarea";
    import { Button } from "@/components/ui/button";
    import { HugeiconsIcon } from "@hugeicons/vue";
@@ -190,14 +191,16 @@
       @update:open="(value) => !value && handleClose()">
       <DialogContent
          :show-close-button="false"
-         class="max-h-[calc(100dvh-32px)] w-[calc(100vw-32px)] max-w-3xl flex flex-col overflow-hidden shadow-none border-2 bg-card text-card-foreground p-4">
-         <DialogHeader>
+         class="max-h-[calc(100dvh-32px)] w-[calc(100vw-32px)] max-w-3xl flex flex-col overflow-hidden shadow-none border-2 bg-card text-card-foreground p-0">
+         <DialogHeader class="p-4 pb-0">
             <DialogTitle class="text-sm">{{
                mode === "create" ? "New task" : "Update task"
             }}</DialogTitle>
          </DialogHeader>
 
-         <div class="w-full min-h-0 overflow-auto no-scrollbar">
+         <Separator class="h-0.5!" />
+
+         <div class="w-full min-h-0 overflow-auto no-scrollbar px-4">
             <form
                id="plan-task-form"
                class="text-primary-foreground"
@@ -405,7 +408,7 @@
                                                 searchTerm &&
                                                 !filteredTags.length
                                              "
-                                             class="flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm cursor-pointer hover:bg-input"
+                                             class="flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm text-primary-foreground cursor-pointer hover:bg-input"
                                              @click="
                                                 handleAddCustomTag(value ?? [])
                                              ">
@@ -417,7 +420,7 @@
                                           <ListboxItem
                                              v-for="tag in filteredTags"
                                              :key="tag.id"
-                                             class="data-highlighted:bg-accent data-highlighted:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\'size-\'])]:size-4"
+                                             class="data-highlighted:bg-accent text-primary-foreground data-highlighted:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\'size-\'])]:size-4"
                                              :value="tag.name"
                                              @select="
                                                 () => {
@@ -471,7 +474,7 @@
             </form>
          </div>
 
-         <div class="flex justify-end gap-x-2">
+         <div class="flex justify-end gap-x-2 p-4 pt-0">
             <Button
                @click="handleClose"
                type="button"

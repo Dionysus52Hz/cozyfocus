@@ -43,10 +43,10 @@
 
 <template>
    <div
-      class="grid grid-cols-3 w-full h-80 overflow-hidden rounded-sm transition-all duration-300 gap-x-1">
+      class="grid grid-cols-3 w-full h-full rounded-sm transition-all duration-300 gap-x-1">
       <!-- TODO -->
       <Card
-         class="todo min-h-0 h-full border-0 rounded-none py-2 gap-2 bg-transparent p-0 shadow-none">
+         class="todo h-full overflow-hidden border-0 rounded-none py-2 gap-2 bg-transparent p-0 shadow-none">
          <div class="flex items-center justify-between text-xs sm:text-sm pr-2">
             <CardTitle class="flex items-center gap-x-2 text-card-foreground">
                <div class="flex gap-x-1 justify-center items-center h-8">
@@ -69,7 +69,7 @@
          </div>
 
          <CardContent
-            class="relative flex-1 min-h-60 overflow-y-auto no-scrollbar p-0">
+            class="relative flex-1 min-h-0 overflow-y-scroll no-scrollbar p-0">
             <EmptyTask
                v-if="!tasksTodo || tasksTodo.length === 0"
                class="absolute top-6 left-6 right-6"
@@ -85,7 +85,7 @@
             </EmptyTask>
 
             <draggable
-               class="text-primary-foreground flex flex-col min-h-20 gap-1"
+               class="text-primary-foreground flex flex-col min-h-60 gap-1"
                tag="ul"
                group="plan-task"
                handle=".drag-handle"
@@ -102,7 +102,7 @@
 
       <!-- IN PROGRESS -->
       <Card
-         class="doing min-h-0 h-full rounded-none border-none shadow-none gap-2 py-2 bg-transparent p-0">
+         class="doing h-full overflow-hidden rounded-none border-none shadow-none gap-2 py-2 bg-transparent p-0">
          <div class="flex items-center justify-between text-xs sm:text-sm pr-2">
             <CardTitle class="flex items-center gap-x-2 text-card-foreground">
                <div class="flex gap-x-1 justify-center items-center h-8">
@@ -125,7 +125,7 @@
          </div>
 
          <CardContent
-            class="relative flex-1 min-h-60 overflow-y-auto no-scrollbar p-0">
+            class="relative flex-1 overflow-y-scroll min-h-0 no-scrollbar p-0">
             <EmptyTask
                v-if="!tasksInProgress || tasksInProgress.length === 0"
                class="absolute top-6 left-6 right-6"
@@ -143,7 +143,7 @@
             </EmptyTask>
 
             <draggable
-               class="text-primary-foreground flex flex-col min-h-20 gap-1"
+               class="text-primary-foreground flex flex-col min-h-60 gap-1"
                tag="ul"
                group="plan-task"
                handle=".drag-handle"
@@ -160,7 +160,7 @@
 
       <!-- DONE -->
       <Card
-         class="done min-h-0 h-full rounded-none border-0 gap-2 py-2 bg-transparent p-0 shadow-none">
+         class="done h-full overflow-hidden rounded-none border-0 gap-2 py-2 bg-transparent p-0 shadow-none">
          <div class="flex items-center justify-between text-xs sm:text-sm pr-2">
             <CardTitle class="flex items-center gap-x-2 text-card-foreground">
                <div class="flex items-center gap-x-1 justify-center h-8">
@@ -184,7 +184,7 @@
          </div>
 
          <CardContent
-            class="relative flex-1 min-h-60 overflow-y-auto no-scrollbar p-0">
+            class="relative flex-1 overflow-y-scroll no-scrollbar p-0">
             <EmptyTask
                v-if="!tasksDone || tasksDone.length === 0"
                class="absolute top-6 left-6 right-6"
@@ -201,7 +201,7 @@
             </EmptyTask>
 
             <draggable
-               class="text-primary-foreground flex flex-col min-h-20 gap-1"
+               class="text-primary-foreground flex flex-col min-h-60 gap-1"
                tag="ul"
                group="plan-task"
                handle=".drag-handle"

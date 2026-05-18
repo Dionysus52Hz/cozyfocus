@@ -1,7 +1,5 @@
 <script setup lang="ts">
-   import { Add01Icon } from "@hugeicons/core-free-icons";
    import { Button } from "@/components/ui/button";
-   import { HugeiconsIcon } from "@hugeicons/vue";
    import { Input } from "@/components/ui/input";
    import { toast } from "vue-sonner";
    import {
@@ -31,10 +29,7 @@
 
    import { useFocusTasks } from "@/composables/useFocusTasks";
    import { useFocusTaskDialog } from "@/composables/useFocusTaskDialog";
-
-   const emit = defineEmits<{
-      (e: "closeForm"): void;
-   }>();
+   import { Separator } from "@/components/ui/separator";
 
    const vFocus = {
       mounted: (el: HTMLElement) => {
@@ -107,15 +102,20 @@
       @update:open="(value) => !value && handleClose()">
       <DialogContent
          :show-close-button="false"
-         class="max-h-[calc(100dvh-32px)] w-[calc(100vw-32px)] max-w-3xl flex flex-col overflow-hidden shadow-none border-2 bg-card text-card-foreground p-4">
-         <DialogHeader>
+         class="max-h-[calc(100dvh-32px)] w-[calc(100vw-32px)] max-w-3xl flex flex-col overflow-hidden shadow-none border-2 bg-card text-card-foreground p-0">
+         <DialogHeader class="p-4 pb-0">
             <DialogTitle class="text-sm">{{
-               mode === "create" ? "New task" : "Update task"
+               mode === "create"
+                  ? "New focus task"
+                  : `Update task "${editingTask?.title}"`
             }}</DialogTitle>
          </DialogHeader>
+
+         <Separator class="h-0.5!" />
+
          <form
             id="focus-task-form"
-            class="flex flex-col gap-4"
+            class="flex flex-col gap-4 p-4 pt-0"
             @submit="onSubmit">
             <FieldGroup class="gap-4">
                <VeeField
@@ -196,9 +196,7 @@
                   size="sm"
                   form="focus-task-form"
                   class="cursor-pointer text-xs border-2 text-primary-foreground">
-                  <HugeiconsIcon :icon="Add01Icon" />{{
-                     mode === "create" ? "Create task" : "Update task"
-                  }}
+                  {{ mode === "create" ? "Create task" : "Update task" }}
                </Button>
             </div>
          </form>
