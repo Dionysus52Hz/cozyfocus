@@ -11,7 +11,7 @@ export const WIDGET_MIN_SIZE: Record<
 > = {
    music: {
       width: 260,
-      height: 340,
+      height: 350,
    },
    plan: {
       width: 490,

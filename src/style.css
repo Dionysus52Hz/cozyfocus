@@ -131,13 +131,13 @@
    --card: oklch(0.9612 0.0182 185.23);
    --card-foreground: oklch(0.15 0 0);
    --popover: oklch(0.9612 0.0182 185.23);
-   --primary: oklch(0.62 0.12 185);
+   --primary: oklch(83.611% 0.09703 187.287);
    --primary-foreground: oklch(0.15 0 0);
-   --secondary: oklch(0.8724 0.0821 28.45); /* C: san hô */
+   --secondary: oklch(0.8724 0.0821 28.45);
    --secondary-foreground: oklch(0.15 0 0);
-   --accent: oklch(0.9021 0.0421 182.34); /* A: xanh ngọc nhạt */
+   --accent: oklch(0.9021 0.0421 182.34);
    --accent-foreground: oklch(0.15 0 0);
-   --input: oklch(0.9312 0.0354 30.21); /* C: san hô nhạt */
+   --input: oklch(0.9312 0.0354 30.21);
    --border: oklch(0.2308 0 0);
 }
 
@@ -145,8 +145,8 @@
    --card: oklch(0.9701 0.0198 135.42);
    --card-foreground: oklch(0.15 0 0);
    --popover: oklch(0.9701 0.0198 135.42);
-   --primary: oklch(0.58 0.13 145);
-   --primary-foreground: oklch(0.98 0 0);
+   --primary: oklch(90.446% 0.11137 146.768);
+   --primary-foreground: oklch(0.15 0 0);
    --secondary: oklch(0.8912 0.0612 88.34);
    --secondary-foreground: oklch(0.15 0 0);
    --accent: oklch(0.9281 0.0381 140.12);
@@ -155,13 +155,12 @@
    --border: oklch(0.2308 0 0);
 }
 
-/* 🌸 Rose Quartz — hồng nhạt + be */
 :root[data-theme="rose-quartz"] {
    --card: oklch(0.9631 0.0148 10.54);
    --card-foreground: oklch(0.15 0 0);
    --popover: oklch(0.9631 0.0148 10.54);
    --primary: oklch(0.72 0.14 12);
-   --primary-foreground: oklch(0.98 0 0);
+   --primary-foreground: oklch(0.15 0 0);
    --secondary: oklch(0.8821 0.0521 55.67);
    --secondary-foreground: oklch(0.15 0 0);
    --accent: oklch(0.9241 0.0341 10.89);
@@ -184,7 +183,6 @@
    --border: oklch(1 0 0 / 40%);
 }
 
-/* 🖤 Carbon Rose — dark xám + hồng */
 :root[data-theme="carbon-rose"] {
    --card: oklch(0.2218 0.0082 15.32);
    --card-foreground: oklch(0.98 0 0);
@@ -199,7 +197,6 @@
    --border: oklch(1 0 0 / 15%);
 }
 
-/* 🌿 Forest Dusk — dark xanh rừng + vàng đất */
 :root[data-theme="forest-dusk"] {
    --card: oklch(0.2312 0.0312 145.21);
    --card-foreground: oklch(0.98 0 0);
