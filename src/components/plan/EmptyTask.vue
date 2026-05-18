@@ -35,7 +35,7 @@
             size="sm"
             @click="action">
             <HugeiconsIcon :icon="Add01Icon" />
-            Add task
+            Create task
          </Button>
       </EmptyContent>
    </Empty>

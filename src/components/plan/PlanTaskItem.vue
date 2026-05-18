@@ -74,7 +74,7 @@
 <template>
    <Item
       size="sm"
-      class="relative group cursor-pointer bg-accent hover:bg-primary/30 rounded-sm p-2 items-center gap-2 text-accent-foreground"
+      class="relative group cursor-pointer bg-accent hover:bg-primary/30 rounded-sm p-2 items-center gap-2 text-accent-foreground flex-nowrap"
       @click="openUpdate(task)">
       <ItemMedia
          class="drag-handle cursor-grab active:cursor-grabbing self-center!">

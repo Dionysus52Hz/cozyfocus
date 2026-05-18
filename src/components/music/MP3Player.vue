@@ -137,7 +137,7 @@
          placeholder="Search by title or artist..." />
    </Field>
 
-   <div class="w-full h-full">
+   <div class="w-full">
       <div
          v-if="isLoading"
          class="space-y-2 sm:space-y-4">

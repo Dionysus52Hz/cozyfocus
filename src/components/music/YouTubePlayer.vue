@@ -202,7 +202,7 @@
 </script>
 
 <template>
-   <div class="flex flex-col w-full h-full gap-2">
+   <div class="flex flex-col w-full gap-2">
       <Field orientation="horizontal">
          <Input
             v-model="urlInput"
